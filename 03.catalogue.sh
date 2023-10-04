@@ -12,7 +12,7 @@ unzip catalogue.zip
 rm -rf catalogue.zip
 npm install
 echo -e "\e[32m Creating Catalogue service\e[0m"
-cp /root/roboshop-shell/catalogue-service /etc/systemd/system/catalogue.service
+cp /root/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
 echo -e "\e[32m Downloading and installing the mongodb schema\e[0m"
 cp /root/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
