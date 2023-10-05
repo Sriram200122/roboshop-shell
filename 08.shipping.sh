@@ -4,13 +4,13 @@ echo -e "\e32m Adding user and location\e[0m"
 useradd roboshop
 mkdir /app
 cd /app
-echo -e "\e[32m Downloading new app content to shipping server\e[0m"
+echo -e "\e[32m Downloading new app to shipping server\e[0m"
 curl -O https://roboshop-artifacts.s3.amazonaws.com/shipping.zip
 unzip shipping.zip
-echo -e echo -e "\e[32m Downloading dependencies and building application to shipping server\e[0m"
+echo -e "\e[32m Downloading dependencies and building application to shipping server\e[0m"
 mvn clean package
 mv target/shipping-1.0.jar shipping.jar
-echo -e "\e[32m creating shipping service\e[0m"
+echo -e "\e[32m creating shipping service file\e[0m"
 cp /root/roboshop-shell/shipping.service /etc/systemd/system/shipping.service
 echo -e "\e[32m Downloading and installing the mysql schema\e[0m"
 yum install mysql -y
@@ -19,4 +19,3 @@ echo -e "\e[32m Enabling and starting the shipping service\e[0m"
 systemctl daemon-reload
 systemctl enable shipping
 systemctl restart shipping
-
