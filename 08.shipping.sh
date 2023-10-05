@@ -14,7 +14,7 @@ echo -e "\e[32m creating shipping service file\e[0m"
 cp /root/roboshop-shell/shipping.service /etc/systemd/system/shipping.service
 echo -e "\e[32m Downloading and installing the mysql schema\e[0m"
 yum install mysql -y
-mysql -h mysql-dev.munukutla.online -uroot -pRoboShop@1 < /app/schema/shipping.sql
+mysql -h mysql-dev.munukutla.online -uroot -pRoboShop@1 </app/schema/shipping.sql
 echo -e "\e[32m Enabling and starting the shipping service\e[0m"
 systemctl daemon-reload
 systemctl enable shipping
