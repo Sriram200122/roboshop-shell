@@ -7,5 +7,7 @@ echo -e "\e[32m Enabling and starting the Rabbitmq-server\e[0m"
 systemctl enable rabbitmq-server
 systemctl restart rabbitmq-server
 echo -e "\e[32m Adding user and setting permissions \e[0m"
-rabbitmqctl add_user roboshop roboshop123
-rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+rabbitmqctl add_user roboshop roboshop123 
+rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" 
+
+
