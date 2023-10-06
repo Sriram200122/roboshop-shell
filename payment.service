@@ -1,4 +1,3 @@
-/etc/systemd/system/payment.service
 [Unit]
 Description=Payment Service
 

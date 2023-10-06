@@ -5,10 +5,10 @@ useradd roboshop
 mkdir /app
 cd /app
 rm -rf *
-echo -e "\e[32m Downloading new app to shipping server\e[0m"
+echo -e "\e[32m Downloading new app to payment server\e[0m"
 curl -O https://roboshop-artifacts.s3.amazonaws.com/payment.zip
 unzip payment.zip
-echo -e "\e[32m Downloading dependencies and building application to shipping server\e[0m"
+echo -e "\e[32m Downloading dependencies and building application to payment server\e[0m"
 pip3.6 install -r requirements.txt
 echo -e "\e[32m creating payment service file\e[0m"
 cp /root/roboshop-shell/payment.service /etc/systemd/system/payment.service
