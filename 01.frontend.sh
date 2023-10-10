@@ -1,14 +1,17 @@
-echo -e "\e[33m Installing Nginx Server\e[0m"
-yum install nginx -y
-echo -e "\e[33m Removing default Nginx content\e[0m"
-cd /usr/share/nginx/html
-rm -rf *
-echo -e "\e[33m Download New Content to Nginx\e[0m"
-curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
-unzip frontend.zip
+source common.sh
+component=nginx
+
+echo -e "$color Installing ${component} Server$nocolor"
+yum install ${component} -y &>>${logfile}
+echo -e "$color Removing default ${component} content$nocolor"
+cd /usr/share/${component}/html
+rm -rf * &>>${logfile}
+echo -e "$color Download New Content to ${component}$nocolor"
+curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${logfile}
+unzip frontend.zip &>>${logfile}
 rm -rf frontend.zip
-echo -e "\e[33m Configuring reverse proxy server\e[0m"
-cp /root/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf
-echo -e "\e[33m Enabling and starting the Nginx server\e[0m"
-systemctl enable nginx
-systemctl restart nginx
+echo -e "$color Configuring reverse proxy server$nocolor"
+cp /root/roboshop-shell/roboshop.conf /etc/${component}/default.d/roboshop.conf
+echo -e "$color Enabling and starting the ${component} server$nocolor"
+systemctl enable ${component} &>>${logfile}
+systemctl restart ${component}
