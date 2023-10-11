@@ -1,7 +1,8 @@
 color="\e[33m"
 nocolor="\e[0m"
 logfile="/tmp/roboshop.log"
-app_path="/app
+app_path="/app"
+
 
 
 nodejs()
@@ -44,7 +45,6 @@ echo -e "$color Downloading and installing the mongodb schema\e$nocolor"
     systemctl enable ${component} &>>$logfile
     systemctl restart ${component}
    }
- }
 
  maven()
  {
