@@ -41,7 +41,7 @@ app_start()
  useradd
  status
  echo -e "$color Creating default app path$nocolor"
-rm -rf ${app_path} &>>${logfile}
+ rm -rf ${app_path} &>>${logfile}
  mkdir ${app_path} &>>${logfile}
  status
  cd ${app_path}
