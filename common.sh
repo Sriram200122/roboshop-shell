@@ -45,7 +45,6 @@ app_start()
  mkdir ${app_path} &>>${logfile}
  status
  cd ${app_path}
- rm -rf *
  echo -e "$color Downloading New App content and dependencies$nocolor"
  curl -O https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${logfile}
  unzip ${component}.zip &>>${logfile}
