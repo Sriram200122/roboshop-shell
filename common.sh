@@ -97,7 +97,7 @@ echo -e "$color Loading schema$nocolor"
    yum install mysql -y &>>${logfile}
    status
    echo -e "$color setting mysql schema$nocolor"
-   mysql -h mysql-dev.munukutla.online -uroot -pRoboShop@1 </app/schema/${component}.sql &>>${logfile}
+   mysql -h mysql-dev.munukutla.online -uroot -pRoboShop@1 <${app_path}/schema/${component}.sql &>>${logfile}
    status
  }
 
