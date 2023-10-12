@@ -85,7 +85,7 @@ echo -e "$color Loading schema$nocolor"
    mvn clean package &>>${logfile}
    status
    echo -e "$color building application $nocolor"
-   mv target/shipping-1.0.jar shipping.jar &>>${logfile}
+   mv target/${component}-1.0.jar ${component}.jar &>>${logfile}
    status
    mysql_schema
    service_start
@@ -97,7 +97,7 @@ echo -e "$color Loading schema$nocolor"
    yum install mysql -y &>>${logfile}
    status
    echo -e "$color setting mysql schema$nocolor"
-   mysql -h mysql-dev.munukutla.online -uroot -pRoboShop@1 <${app_path}/schema/shipping.sql &>>${logfile}
+   mysql -h mysql-dev.munukutla.online -uroot -pRoboShop@1 <${app_path}/schema/${component}.sql &>>${logfile}
    status
  }
 
