@@ -15,3 +15,4 @@ cp /root/roboshop-shell/roboshop.conf /etc/${component}/default.d/roboshop.conf
 echo -e "$color Enabling and starting the ${component} server$nocolor"
 systemctl enable ${component} &>>${logfile}
 systemctl restart ${component}
+
