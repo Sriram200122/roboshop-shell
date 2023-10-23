@@ -5,7 +5,7 @@ echo -e "$color Installing ${component} Server$nocolor"
 yum install ${component} -y &>>${logfile}
 echo -e "$color Removing default ${component} content$nocolor"
 cd /usr/share/${component}/html
-rm -rf * &>>${logfile}
+rm -rf * &>>${logfi
 echo -e "$color Download New Content to ${component}$nocolor"
 curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${logfile}
 unzip frontend.zip &>>${logfile}
