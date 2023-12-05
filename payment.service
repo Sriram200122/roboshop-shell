@@ -4,11 +4,11 @@ Description=Payment Service
 [Service]
 User=root
 WorkingDirectory=/app
-Environment=CART_HOST=cart-dev.munukutla.cloud
+Environment=CART_HOST=cart-dev.kumari.cloud
 Environment=CART_PORT=8080
-Environment=USER_HOST=user-dev.munukutla.cloud
+Environment=USER_HOST=user-dev.kumari.cloud
 Environment=USER_PORT=8080
-Environment=AMQP_HOST=rabbitmq-dev.munukutla.cloud
+Environment=AMQP_HOST=rabbitmq-dev.kumari.cloud
 Environment=AMQP_USER=roboshop
 Environment=AMQP_PASS=roboshop123
 
